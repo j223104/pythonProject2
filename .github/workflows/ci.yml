@@ -18,8 +18,7 @@ jobs:
 
       - name: Install pipenv
         run: |
-          pip install pipenv
-
+          python -m pip install --upgrade pipenv wheel
       - id: cache-pipenv
         uses: actions/cache@v1
         with:
@@ -30,7 +29,6 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
           pipenv install --deploy --dev
-
 #          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
 
 #      - name: Install Poetry
