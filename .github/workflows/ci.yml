@@ -17,13 +17,13 @@ jobs:
           python-version: 3.9.9
 
       - name: Install pipenv
-          run: |
-            pip install pipenv
-            echo "${HOME}/.pipenv/bin" >> $GITHUB_PATH
+        run: |
+          pip install pipenv
+          echo "${HOME}/.local/share/virtualenvs" >> $GITHUB_PATH
 
       - name: Install dependencies
         run: |
-          ${HOME}/.pipenv/bin/pipenv install
+          ${HOME}/.local/share/virtualenvs/pipenv install
 
 #          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
 
