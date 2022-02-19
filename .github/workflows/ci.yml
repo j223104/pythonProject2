@@ -16,14 +16,20 @@ jobs:
         with:
           python-version: 3.9.9
 
-      - name: Install Poetry
-        run: |
-          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
+      - name: Install pipenv
+          run: pip install pipenv
 
-      - name: Install dependencies
-        run: |
-          ${HOME}/.poetry/bin/poetry install
+#      - name: Install Pipenv
+#        run: |
+#          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+#          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
+
+#      - name: Install dependencies
+#        run: |
+#          ${HOME}/.poetry/bin/poetry install
+
+      - name: Setup tmate session
+          uses: mxschmitt/action-tmate@v3
 
       - name: Test python project
         run: |
