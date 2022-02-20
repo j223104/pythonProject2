@@ -3,3 +3,5 @@
 
 # Python
 __pycache__
+
+blog/local_settings.py
